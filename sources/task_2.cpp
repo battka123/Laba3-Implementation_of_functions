@@ -39,7 +39,7 @@ int mean(const std::vector<int>& input) {
 }
 
 int mean_k(const std::vector<int>& input, int s1, int s2) {
-  int summ = 0, a=s1;
+  int summ = 0, a = s1;
   for (; s1 <= s2; summ += input[s1], s1++)
     ;
   int average;
