@@ -4,21 +4,21 @@
 
 // Task 4.
 void remove_negative(std::vector<int>& input) {
-  size_t i = 0;
-  for (; i < input.size(); i++){
-    if (input[i] < 0){
-      input.erase(input.begin() + input[i]);
-      break;
+  int k = 0;
+  for (size_t i = 0; i < input.size(); i++) {
+    if ((input[i] < 0) && (k == 0)) {
+      input.erase(input.begin() + int(i));
+      k = 1;
     }
   }
 }
 
 void remove_last_even(std::vector<int>& input) {
-  size_t i = 0;
-  for (; i < input.size(); i++){
-    if (input[input.size()-i-1] % 2 == 0){
-      input.erase(input.begin() + input[input.size()-i-1]);
-      break;
+  int k = 0;
+  for (size_t i = 0; i < input.size(); i++) {
+    if ((input[input.size() - i - 1] % 2 == 0) && (k == 0)) {
+      input.erase(input.begin() + int(input.size()) - int(i) - 1);
+      k = 1;
     }
   }
 }

@@ -4,16 +4,17 @@
 
 // Task 1.
 void multi_2(std::vector<int>& input) {
-    size_t i = 0;
-    for (; i < input.size(); i++, input[i] *= 2);
+  for (auto& i : input) i *= 2;
 }
 
 void reduce_a(std::vector<int>& input, int a) {
-  size_t i = 0;
-  for (; i < input.size(); i++, input[i] -= a);
+  for (auto& i : input) i -= a;
 }
 
 void div_on_first(std::vector<int>& input) {
-  size_t i = 0;
-  for (; i < input.size(); i++, input[i] /= input[0]);
+  int first = 0;
+  for (auto& i : input) {
+    if (input[0] == i) first = i;
+    i /= first;
+  }
 }
